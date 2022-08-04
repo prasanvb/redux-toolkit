@@ -6,7 +6,7 @@ import rtk from "@reduxjs/toolkit";
 
 // Value of initial cake state
 const initialState = {
-  numOfCakes: 10
+  numOfCakes: 100
 }
 
 const cakeSlice = rtk.createSlice({
@@ -14,8 +14,9 @@ const cakeSlice = rtk.createSlice({
   initialState, // Value of initial cake state
   reducers: { // Simplified version of the reducer
     // Note: By default action creator are created with same name
-    ordered: (state) => {
+    ordered: (state, action) => {
       // Note: you can directly mutate the state thanks to inbuilt immer library 
+      if(!!action.payload) state.numOfCakes -= action.payload
       state.numOfCakes--
     },
     restocked: (state, action) => {

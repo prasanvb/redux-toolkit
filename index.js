@@ -8,7 +8,7 @@ const unsubscribe = store.subscribe(() => {
 })
 
 store.dispatch(cakeActions.ordered());
-store.dispatch(cakeActions.ordered());
+store.dispatch(cakeActions.ordered(10));
 store.dispatch(cakeActions.restocked(300));
 
 unsubscribe();
