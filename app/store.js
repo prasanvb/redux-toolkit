@@ -16,7 +16,7 @@ const store = rtk.configureStore({
     cakes: cakeReducer,
     iceCreams: iceCreamReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })
 
 // Note: Check to see what all methods returned by the store

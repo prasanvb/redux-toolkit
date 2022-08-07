@@ -15,7 +15,7 @@ const cakeSlice = rtk.createSlice({
   reducers: { // Simplified version of the reducer
     // Note: By default action creator are created with same name
     ordered: (currentState, action) => {
-      // Note: you can directly mutate the state thanks to inbuilt immer library 
+      // IMPORTANT Note: you can directly mutate the state thanks to inbuilt immer library 
       if(!!action.payload) currentState.numOfCakes -= action.payload
       currentState.numOfCakes--
     },

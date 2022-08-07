@@ -16,6 +16,14 @@ const iceCreamSlice = rtk.createSlice({
     restocked: (currentState, action) => {
       currentState.numOfIceCreams += action.payload
     }
+  },
+  // IMPORTANT NOTE: One of the key concepts of Redux is that each slice reducer "owns" its slice of state, 
+  // and that many slice reducers can independently respond to the same action type. 
+  // extraReducers allows createSlice to respond to other action types besides the types it has generated.
+  extraReducers: {
+  ['cakeStateSlice/ordered']: (currentState)  => {
+    currentState.numOfIceCreams--;
+  }
   }
 })
 
