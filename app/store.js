@@ -1,7 +1,7 @@
 import rtk from "@reduxjs/toolkit";
 import { cakeReducer } from "../features/cake/cakeSlice.js";
 import { iceCreamReducer } from "../features/iceCream/iceCreamSlice.js";
-
+import { userReducer } from "../features/user/userSlice.js";
 // Logger Middleware
 import logger from 'redux-logger'
 
@@ -15,12 +15,13 @@ const store = rtk.configureStore({
   reducer:{
     cakes: cakeReducer,
     iceCreams: iceCreamReducer,
+    users: userReducer
   },
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })
 
 // Note: Check to see what all methods returned by the store
-console.log(store);
+// console.log(store);
 
 export { store };
 

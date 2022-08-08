@@ -1,3 +1,7 @@
+/* 
+  Example: Creating Slice of State
+*/
+
 import rtk from "@reduxjs/toolkit";
 
 // Note: Check here to see list of all functions returned by redux-toolkit
