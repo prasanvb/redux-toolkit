@@ -9,30 +9,32 @@ import rtk from "@reduxjs/toolkit";
 
 // Value of initial cake state
 const initialState = {
-  numOfCakes: 100
-}
+  numOfCakes: 100,
+};
 
 // Creating Slice of State
 const cakeSlice = rtk.createSlice({
-  name: 'cakeStateSlice', // Name of the slice
+  name: "cakeStateSlice", // Name of the slice
   initialState, // Value of initial cake state
-  reducers: { // Simplified version of the reducer
-    // Note: By default action creator are created with same name
+  reducers: {
+    // Simplified version of the reducer
+    // Note: By default in the RTK action creator are created with same name reducers
     ordered: (currentState, action) => {
-      // IMPORTANT Note: you can directly mutate the state thanks to inbuilt immer library 
-      if(!!action.payload) currentState.numOfCakes -= action.payload
-      currentState.numOfCakes--
+      // IMPORTANT Note: you can directly mutate the state thanks to inbuilt immer library
+      if (!!action.payload) currentState.numOfCakes -= action.payload;
+      currentState.numOfCakes--;
     },
     restocked: (currentState, action) => {
-      currentState.numOfCakes += action.payload
+      currentState.numOfCakes += action.payload;
     },
-  }
-})
+  },
+});
 
 // Note: check to see what is inside the slice of the state
-// console.log({cakeSlice});
+// console.log({ cakeSlice });
 
 const cakeReducer = cakeSlice.reducer;
+// Note: By default in the RTK action creator are created with same name reducers
 const cakeActions = cakeSlice.actions;
 
 export { cakeReducer, cakeActions };
